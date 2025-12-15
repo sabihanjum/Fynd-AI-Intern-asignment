@@ -1,8 +1,8 @@
 # Fynd AI Intern Assessment - Complete Report
 
-**Submission Date**: December 2024
+**Submission Date**:15 December 2025
 **Assessment Period**: Take-Home Assessment
-**Candidate**: [Your Name]
+**Candidate**: Sabiha Anjum
 
 ## Executive Summary
 
@@ -783,6 +783,6 @@ The solution is **production-ready** and can be **deployed immediately** with de
 
 ---
 
-**Report Generated**: December 2024
-**Author**: [Candidate Name]
+**Report Generated**: December 2025
+**Author**: Sabiha Anjum
 **Assessment**: Fynd AI Intern - Take Home

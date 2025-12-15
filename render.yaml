@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: fynd-ai-task2
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: |
+      cd task-2/backend
+      pip install -r requirements.txt
+    startCommand: |
+      cd task-2/backend
+      gunicorn app:app
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
+      - key: FLASK_ENV
+        value: production
+      - key: API_HOST
+        value: 0.0.0.0
+      - key: API_PORT
+        value: ${PORT}
+      - key: PORT
+        value: "5000"
+    disk:
+      name: reviews-data
+      mountPath: /opt/render/project/src/task-2/data
+      sizeGB: 1
