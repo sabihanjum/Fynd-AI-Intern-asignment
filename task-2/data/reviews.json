@@ -1,0 +1,101 @@
+[
+  {
+    "id": "e913684e-5d8c-46e9-90d0-43ffdad7d48c",
+    "rating": 5,
+    "review": "good",
+    "ai_response": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "summary": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "recommended_action": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "timestamp": "2025-12-15T17:44:55.101720"
+  },
+  {
+    "id": "c06cb842-f31d-4d98-b98a-4cee1746eb42",
+    "rating": 5,
+    "review": "Good",
+    "ai_response": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "summary": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "recommended_action": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "timestamp": "2025-12-15T17:48:28.214186"
+  },
+  {
+    "id": "3660f864-ddfc-43c4-afe0-f61ac6476b21",
+    "rating": 5,
+    "review": "Good",
+    "ai_response": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "summary": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "recommended_action": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "timestamp": "2025-12-15T17:51:03.803432"
+  },
+  {
+    "id": "8d65e811-a609-48f1-a9d0-cf3cb6f95aaf",
+    "rating": 4,
+    "review": "Good",
+    "ai_response": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "summary": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "recommended_action": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "timestamp": "2025-12-15T17:52:32.150631"
+  },
+  {
+    "id": "4e279511-37f3-47f1-8830-ee7aa5a0d790",
+    "rating": 4,
+    "review": "Excellent",
+    "ai_response": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "summary": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "recommended_action": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "timestamp": "2025-12-15T17:57:01.109938"
+  },
+  {
+    "id": "a0b765f9-8458-4f90-915e-1bde9a6f945c",
+    "rating": 3,
+    "review": "Ok",
+    "ai_response": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "summary": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "recommended_action": "Error: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.",
+    "timestamp": "2025-12-15T17:59:04.917039"
+  },
+  {
+    "id": "d3e9dcf0-8acd-4e38-8a9e-f517bc6e0f43",
+    "rating": 3,
+    "review": "Ok",
+    "ai_response": "Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "summary": "Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "recommended_action": "Error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "timestamp": "2025-12-15T18:01:37.197813"
+  },
+  {
+    "id": "af144f90-692c-44ab-a863-a0c984859cf7",
+    "rating": 3,
+    "review": "Very nice",
+    "ai_response": "Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "summary": "Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "recommended_action": "Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "timestamp": "2025-12-15T18:04:15.679691"
+  },
+  {
+    "id": "a1fcfa38-50f3-4448-b7b2-9dda05e4a463",
+    "rating": 3,
+    "review": "Good",
+    "ai_response": "Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "summary": "Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "recommended_action": "Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "timestamp": "2025-12-15T18:05:30.840208"
+  },
+  {
+    "id": "25018642-8386-4849-9651-27f0779740f0",
+    "rating": 3,
+    "review": "Great product overall, but the battery drains faster than expected when using Bluetooth all day.",
+    "ai_response": "Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "summary": "Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "recommended_action": "Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "timestamp": "2025-12-15T18:10:10.035772"
+  },
+  {
+    "id": "e89372d9-d03f-4fae-b391-b7c53cdf4746",
+    "rating": 3,
+    "review": "Great product overall, but the battery drains faster than expected when using Bluetooth all day.",
+    "ai_response": "Thank you for your 3-star review and for sharing your experience, especially noting that our product is great overall! We understand your concern about the battery draining faster than expected with all-day Bluetooth use, and we appreciate you bringing this to our attention. Your feedback is valuable as we continuously work to optimize performance and user experience.",
+    "summary": "The product is great overall, but its battery drains quickly with all-day Bluetooth usage.",
+    "recommended_action": "Update product documentation (e.g., website, FAQ, user manual) to clearly state the **expected battery life when using Bluetooth continuously** and provide tips on how to optimize battery usage for heavy Bluetooth users.",
+    "timestamp": "2025-12-15T18:16:12.992425"
+  }
+]

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FyndAI - User Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .star-rating {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .star-input {
+            display: none;
+        }
+        
+        .star-label {
+            font-size: 40px;
+            cursor: pointer;
+            color: #ddd;
+            transition: color 0.2s;
+            user-select: none;
+        }
+        
+        .star-label:hover,
+        .star-label:hover ~ .star-label,
+        .star-input:checked ~ .star-label {
+            color: #ffc107;
+        }
+        
+        .star-input:checked ~ .star-label {
+            color: #ffc107;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 150px;
+            transition: border-color 0.3s;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .response-section {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .response-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .response-text {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #c33;
+        }
+        
+        .success {
+            background: #efe;
+            color: #3c3;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3c3;
+        }
+        
+        .rating-display {
+            font-size: 1.5rem;
+            color: #ffc107;
+            margin-top: 10px;
+        }
+        
+        .character-count {
+            text-align: right;
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⭐ FyndAI Reviews</h1>
+            <p>Share your feedback and get an AI response</p>
+        </header>
+        
+        <div class="card">
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label>How would you rate us? *</label>
+                    <div class="star-rating" id="ratingStars">
+                        <input type="radio" class="star-input" id="star5" name="rating" value="5">
+                        <label for="star5" class="star-label">★</label>
+                        
+                        <input type="radio" class="star-input" id="star4" name="rating" value="4">
+                        <label for="star4" class="star-label">★</label>
+                        
+                        <input type="radio" class="star-input" id="star3" name="rating" value="3">
+                        <label for="star3" class="star-label">★</label>
+                        
+                        <input type="radio" class="star-input" id="star2" name="rating" value="2">
+                        <label for="star2" class="star-label">★</label>
+                        
+                        <input type="radio" class="star-input" id="star1" name="rating" value="1">
+                        <label for="star1" class="star-label">★</label>
+                    </div>
+                    <div class="rating-display" id="ratingDisplay"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review">Share your review (max 1000 characters) *</label>
+                    <textarea id="review" placeholder="Tell us about your experience..." maxlength="1000" required></textarea>
+                    <div class="character-count">
+                        <span id="charCount">0</span>/1000
+                    </div>
+                </div>
+                
+                <button type="submit" id="submitBtn">Submit Review & Get AI Response</button>
+            </form>
+            
+            <div id="message"></div>
+            <div id="responseContainer"></div>
+        </div>
+    </div>
+    
+    <script>
+        const API_URL = window.location.hostname === 'localhost' 
+            ? 'http://localhost:5000/api' 
+            : window.location.origin + '/api';
+        
+        // Initialize rating stars
+        const ratingInputs = document.querySelectorAll('input[name="rating"]');
+        const ratingDisplay = document.getElementById('ratingDisplay');
+        
+        ratingInputs.forEach(input => {
+            input.addEventListener('change', function() {
+                const stars = '★'.repeat(this.value) + '☆'.repeat(5 - this.value);
+                ratingDisplay.textContent = stars + ' ' + this.value + ' stars';
+            });
+        });
+        
+        // Character count
+        const reviewTextarea = document.getElementById('review');
+        reviewTextarea.addEventListener('input', function() {
+            document.getElementById('charCount').textContent = this.value.length;
+        });
+        
+        // Form submission
+        document.getElementById('reviewForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const rating = document.querySelector('input[name="rating"]:checked')?.value;
+            const review = document.getElementById('review').value;
+            
+            if (!rating) {
+                showMessage('Please select a rating', 'error');
+                return;
+            }
+            
+            if (!review.trim()) {
+                showMessage('Please enter a review', 'error');
+                return;
+            }
+            
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner"></span>Submitting...';
+            
+            try {
+                const response = await fetch(`${API_URL}/reviews`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        rating: parseInt(rating),
+                        review: review
+                    })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    showMessage('Thank you for your review!', 'success');
+                    displayAIResponse(data);
+                    document.getElementById('reviewForm').reset();
+                    ratingDisplay.textContent = '';
+                    document.getElementById('charCount').textContent = '0';
+                } else {
+                    const error = await response.json();
+                    showMessage(error.error || 'Failed to submit review', 'error');
+                }
+            } catch (error) {
+                showMessage('Error: ' + error.message, 'error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Submit Review & Get AI Response';
+            }
+        });
+        
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML = `<div class="${type}">${message}</div>`;
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageDiv.innerHTML = '';
+                }, 5000);
+            }
+        }
+        
+        function displayAIResponse(data) {
+            const container = document.getElementById('responseContainer');
+            container.innerHTML = `
+                <div class="response-section">
+                    <h3>📬 AI Response</h3>
+                    <p class="response-text">${data.ai_response}</p>
+                    <p style="color: #999; margin-top: 15px; font-size: 0.9rem;">
+                        Submitted at: ${new Date(data.timestamp).toLocaleString()}
+                    </p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
