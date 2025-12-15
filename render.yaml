@@ -4,12 +4,9 @@ services:
     env: python
     plan: free
     region: oregon
-    buildCommand: |
-      cd task-2/backend
-      pip install -r requirements.txt
-    startCommand: |
-      cd task-2/backend
-      gunicorn app:app
+    rootDir: task-2/backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
     envVars:
       - key: GEMINI_API_KEY
         sync: false
@@ -25,5 +22,5 @@ services:
         value: "5000"
     disk:
       name: reviews-data
-      mountPath: /opt/render/project/src/task-2/data
+      mountPath: /opt/render/project/src/data
       sizeGB: 1
